@@ -1,0 +1,5 @@
+print("---- Calculando a aréa de um retângulo ----")
+comprimento = int( input("Digite o comprimento: ") )
+altura = int( input("Digite a altura: ") )
+print("--- Realizando cálculo ---")
+print(f"A área do retângulo é:", comprimento*altura, "m²")
