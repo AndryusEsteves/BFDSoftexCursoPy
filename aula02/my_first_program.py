@@ -1,2 +1,8 @@
-print ("hello world")
-print ("This is my first Python program")
+print ( 10 )
+print ( False)
+print ("número")
+print ( 50.2 )
+
+x = 4
+y = 3
+print (x / y)

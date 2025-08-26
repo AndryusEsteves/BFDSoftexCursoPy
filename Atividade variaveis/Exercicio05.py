@@ -1,0 +1,5 @@
+cores = ("vermelho", "verde", "azul", "verde")
+set(cores)
+cores_unicas = set(cores)
+cores_unicas.add("amarelo")
+print(cores_unicas)
