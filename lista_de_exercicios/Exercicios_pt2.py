@@ -24,3 +24,4 @@ tabuleiro[0] = ["torP", "cavP", "bisP", "raiP", "reiP", "bisP", "cavP", "torP"]
 
 for linha in tabuleiro:
     print(" ".join(linha))
+
