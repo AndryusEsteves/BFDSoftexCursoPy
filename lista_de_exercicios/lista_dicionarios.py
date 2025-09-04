@@ -134,3 +134,21 @@ def mescla_dic(dicionario_1,dicionario_2):
 
 dicionario = mescla_dic(dicionario_1, dicionario_2)
 print (dicionario)
+
+#EXERCICIO 10
+
+# Ordenando dicionário por valor
+
+#     Dado o dicionário:
+
+#     pontuacoes = {"João": 50, "Maria": 80, "Pedro": 70}
+
+#     Imprima os itens do dicionário ordenados pela pontuação (valor), do maior para o menor.
+
+pontuacoes = {"João": 50, "Maria": 80, "Pedro": 70}
+
+ordenados = sorted(pontuacoes.items(), key=lambda par: par[1], reverse = True)
+
+for nome, pontuacao in ordenados:
+    
+    print(f"{nome}:{pontuacao}")
