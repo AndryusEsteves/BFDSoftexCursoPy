@@ -1,0 +1,125 @@
+# Lista de Exercícios – POO: Herança
+
+# 1) Classe Usuario e Cliente herdando de Usuario
+class Usuario:
+    def __init__(self, nome, email):
+        self.nome = nome
+        self.email = email
+
+class Cliente(Usuario):
+    pass
+
+cliente1 = Cliente("Andryus", "andryus@email.com")
+print("Exercício 1:")
+print(cliente1.nome, cliente1.email)
+print("-" * 50)
+
+
+# 2) Método exibir_informacoes() herdado
+class Usuario:
+    def __init__(self, nome, email):
+        self.nome = nome
+        self.email = email
+
+    def exibir_informacoes(self):
+        return f"Nome: {self.nome}, Email: {self.email}"
+
+class Cliente(Usuario):
+    pass
+
+cliente2 = Cliente("Maria", "maria@email.com")
+print("Exercício 2:")
+print(cliente2.exibir_informacoes())
+print("-" * 50)
+
+
+# 3) Sobrescrita de método (saudacao)
+class Usuario:
+    def saudacao(self):
+        return "Olá, usuário"
+
+class Cliente(Usuario):
+    def saudacao(self):
+        return "Olá, cliente"
+
+cliente3 = Cliente()
+print("Exercício 3:")
+print(cliente3.saudacao())
+print("-" * 50)
+
+
+# 4) Construtor com super() e saldo
+class Usuario:
+    def __init__(self, nome, email):
+        self.nome = nome
+        self.email = email
+
+class Cliente(Usuario):
+    def __init__(self, nome, email, saldo):
+        super().__init__(nome, email)
+        self.saldo = saldo
+
+cliente4 = Cliente("João", "joao@email.com", 150.0)
+print("Exercício 4:")
+print(cliente4.nome, cliente4.email, cliente4.saldo)
+print("-" * 50)
+
+
+# 5) Hierarquia de Funcionario e Gerente
+class Usuario:
+    def __init__(self, nome, email):
+        self.nome = nome
+        self.email = email
+
+class Funcionario(Usuario):
+    def __init__(self, nome, email, cargo):
+        super().__init__(nome, email)
+        self.cargo = cargo
+
+class Gerente(Funcionario):
+    def __init__(self, nome, email, cargo, setor):
+        super().__init__(nome, email, cargo)
+        self.setor = setor
+
+gerente1 = Gerente("Carlos", "carlos@email.com", "Gerente Geral", "Financeiro")
+print("Exercício 5:")
+print(gerente1.nome, gerente1.email, gerente1.cargo, gerente1.setor)
+print("-" * 50)
+
+
+# 6) Herança múltipla: Autenticacao + Permissao
+class Autenticacao:
+    def login(self):
+        return "Usuário logado com sucesso"
+
+class Permissao:
+    def verificar_permissao(self):
+        return "Permissão concedida"
+
+class Administrador(Autenticacao, Permissao):
+    pass
+
+adm = Administrador()
+print("Exercício 6:")
+print(adm.login())
+print(adm.verificar_permissao())
+print("-" * 50)
+
+
+# 7) Conflito de métodos (status) e __mro__
+class Autenticacao:
+    def status(self):
+        return "Status da Autenticação"
+
+class Permissao:
+    def status(self):
+        return "Status da Permissão"
+
+class Administrador(Autenticacao, Permissao):
+    pass
+
+adm2 = Administrador()
+print("Exercício 7:")
+print(adm2.status())  # Vai seguir a ordem do MRO
+print("Ordem de resolução (MRO):")
+print(Administrador.__mro__)
