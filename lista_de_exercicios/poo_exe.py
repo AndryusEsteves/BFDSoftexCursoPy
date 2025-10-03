@@ -234,5 +234,5 @@ cachorro2 = Cachorro("Lux", 7)
 
 print(cachorro1.nome)
 print(cachorro2.nome)
-print(cachorro1.idade)
+print(cachorro1.idade)  
 print(cachorro2.idade)
